@@ -5,7 +5,6 @@ export default class RayQLSyntaxHighlighter {
   static operators = [":", ",", "(", ")", "{", "}"];
 
   static highlight(code: string) {
-    // Adjusted regex to match keywords followed by a '?'
     const tokens = code.split(/(\s+|#.*|,|\(|\)|{|}|str\?|enum|model|int|str|timestamp|default|primary_key|auto_increment|unique|foreign_key|admin|developer|normal)/).filter(token => token.trim() !== '' || token.match(/\s+/));
 
     return tokens.map(token => {
